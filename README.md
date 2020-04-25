@@ -1,2 +1,1 @@
-please refer to 
-<smallerxie/kickout-wifi>(https://github.com/smallerxie/kickout-wifi)
+please refer to https://github.com/smallerxie/kickout-wifi

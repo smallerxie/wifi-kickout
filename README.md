@@ -23,9 +23,7 @@ Then, I recommend triggering the script periodically by crontab, whose highest f
 
 Otherwise, you may prefer a higher frequency to run the script by using the "sleep" command in the kickout-wifi.sh and then call itself again. Another way is to use a loop *while *true* - do - done* with the "sleep" command in the end of the loop.
 
-# Log
-The log file is located at /tmp/wifi-kickout.log.
-Some actions are also recorded in the system logger `/var/log/message`.
+The log file is located at /tmp/wifi-kickout.log. Some actions are also recorded in the system logger `/var/log/message`.
 
 # Futur improvement
 Use a list-like structure to set different thresholds for different wlan devices in the router. Since ash does not support list, string manipulation seems necessary.

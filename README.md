@@ -15,13 +15,13 @@ There are thus a **blacklist** and a **whitelist**, attention that the type is s
 By default, the "**white**list" mode is selected, and with an empty whitelist, any associated client might be kicked out by the router if its signal is too weak (< **thr**).
 
 # Installation
-First, copy the script file kickout-wifi.sh to your router (e.g., using scp), in my case the location is /usr/kickout.sh.
+First, copy the script file kickout.sh to your router (e.g., using scp), in my case the location is /usr/kickout.sh.
 
 Then, I recommend triggering the script periodically by crontab, whose highest frequency is 1 run per minute. To do this, add the following line to your /etc/crontabs/root file:
 
 `*/1 * * * * /bin/sh /usr/kickout.sh`
 
-Otherwise, you may prefer a higher frequency to run the script by using the "sleep" command in the kickout-wifi.sh and then call itself again. Another way is to use a loop *while *true* - do - done* with the "sleep" command in the end of the loop.
+Otherwise, you may prefer a higher frequency to run the script by using the "sleep" command in the kickout.sh and then call itself again. Another way is to use a loop *while *true* - do - done* with the "sleep" command in the end of the loop.
 
 The log file is located at /tmp/wifi-kickout.log. Some actions are also recorded in the system logger `/var/log/message`.
 

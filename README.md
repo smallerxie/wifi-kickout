@@ -19,7 +19,7 @@ Simply copy the script file kickout-wifi.sh to your router (e.g., using scp), in
 
 I recommend triggering the script periodically by crontab, whose highest frequency is 1 run per minute. To do this, add the following line to your /etc/crontabs/root file:
 
-*/1 * * * * /bin/sh /usr/kickout.sh
+`*/1 * * * * /bin/sh /usr/kickout.sh`
 
 Otherwise, you may prefer a higher frequency to run the script by using the "sleep" command in the kickout-wifi.sh and then call itself again. Another way is to use a loop *while *true* - do - done* with the "sleep" command in the end of the loop.
 

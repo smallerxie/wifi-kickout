@@ -32,7 +32,10 @@ function deauth ()
 	echo "kicking $1 with $3 dBm (thr=$thr) at $2" | logger
 	echo "$datetime: kicking $1 with $3 dBm (thr=$thr) at $2" >> $logfile
 	ubus call hostapd.$wlan del_client \
-	"{'addr':'$mac', 'reason':5, 'deauth':true, 'ban_time':0}"
+	"{'addr':'$mac', 'reason':5, 'deauth':true, 'ban_time':3000}"
+# "ban_time" prohibits the client to reassociate for the given amount of milliseconds.
+
+
 }
 
 # wlanlist for multiple wlans (e.g., 5GHz/2.4GHz)

@@ -1,9 +1,9 @@
-# Introduction to kickout-wifi
+# Introduction to wifi-kickout
 The shell script for OpenWrt kicks out the wifi client(s) with a weak signal by fixing a threshold.
 It can be periodically triggered by crontab or by sleep command, thus improves roaming performance.
 The shell script works on original OpenWrt with no additional packages, the script is compatible with the original OpenWrt's ash shell (and bash shell).
 This repository was inspired by [nikito7/kickout-wifi](https://github.com/nikito7/kickout-wifi), thanks for his/her original work :)
-I modified some of the kick-out rules to meet my own requirements and thus opened a new repository to accept issues.
+I modified some of the kickout rules to meet my own requirements and thus opened a new repository to accept issues.
 
 # Parameters
 Before using it, you are suggested to fix the 4 parameters according to your own requirements.

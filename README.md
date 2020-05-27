@@ -29,4 +29,4 @@ The log file is located at /tmp/wifi-kickout.log. Some actions are also recorded
 Use a list-like structure to set different thresholds for different wlan devices in the router. Since ash does not support list, string manipulation seems necessary.
 
 # Issues
-Issues are always welcome, please use **English** or **French/Français** or **Chinese/中文** to creat or replay issues.
+Issues are always welcome, **English** is prefered, **French/Français** or **Chinese/中文** are also accepted.

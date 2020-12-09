@@ -44,8 +44,13 @@ wlanlist=$(ifconfig | grep wlan | grep -v sta | awk '{ print $1 }')
 #loop for each wlan
 for wlan in $wlanlist
 do
+	#skip wlan if necessary
+	if [ $wlan = wlan0 ];then
+		continue
+	fi
+	###
 	maclist=""; maclist=$(iw $wlan station dump | grep Station | awk '{ print $2 }')
-#loop for each associated client (station)
+	#loop for each associated client (station)
 	for mac in $maclist
 	do
 		echo "$blacklist" | grep -q -e $mac

@@ -8,11 +8,13 @@ I modified some of the kickout rules to meet my own requirements and thus opened
 # Parameters
 Before using it, you are suggested to set the 4 parameters according to your own preference.
 **thr**=-75 is the threshold (dBm), always negative!
+
 **mode** can be set to either "**white**" or "**black**" (always minuscule):
  - in "**black**list" mode, **only** the clients in the blacklist can be kicked out;
  - in "**white**list" mode, the script kicks out **all** the clients **except** those in the whitelist.
 There are thus a **blacklist** and a **whitelist**, attention that the type is string other than array, a comma is used to seprate the different mac addresses.
 By default, the "**white**list" mode is selected, and with an empty whitelist, any associated client might be kicked out by the router if its signal is too weak (< **thr**).
+
 **hidden functions** there are commented-out codes in the sh file to offer additional functions, if you can not understand them, just leave those lines commented-out.
 
 # Installation

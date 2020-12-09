@@ -59,13 +59,13 @@ do
 				grep "signal avg" | awk '{ print $3 }')
 				if [ $rssi -lt $thr ]
 					then
-						#skip wlan if necessary
-						if [ $wlan = wlan0 ];then
-							echo "ignored $1 with $3 dBm (thr=$thr) at $2" | logger
-							echo "$datetime: ignored $1 with $3 dBm (thr=$thr) at $2" >> $logfile
-							continue
-						fi
-						###
+						##skip wlan if necessary
+						#if [ $wlan = wlan0 ];then
+						#	echo "ignored $1 with $3 dBm (thr=$thr) at $2" | logger
+						#	echo "$datetime: ignored $1 with $3 dBm (thr=$thr) at $2" >> $logfile
+						#	continue
+						#fi
+						##
 						deauth $mac $wlan $rssi
 				fi
 		fi

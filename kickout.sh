@@ -44,11 +44,6 @@ wlanlist=$(ifconfig | grep wlan | grep -v sta | awk '{ print $1 }')
 #loop for each wlan
 for wlan in $wlanlist
 do
-	#skip wlan if necessary
-	if [ $wlan = wlan0 ];then
-		continue
-	fi
-	###
 	maclist=""; maclist=$(iw $wlan station dump | grep Station | awk '{ print $2 }')
 	#loop for each associated client (station)
 	for mac in $maclist
@@ -64,6 +59,13 @@ do
 				grep "signal avg" | awk '{ print $3 }')
 				if [ $rssi -lt $thr ]
 					then
+						#skip wlan if necessary
+						if [ $wlan = wlan0 ];then
+							echo "ignored $1 with $3 dBm (thr=$thr) at $2" | logger
+							echo "$datetime: ignored $1 with $3 dBm (thr=$thr) at $2" >> $logfile
+							continue
+						fi
+						###
 						deauth $mac $wlan $rssi
 				fi
 		fi

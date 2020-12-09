@@ -27,13 +27,14 @@ fi
 # function deauth
 function deauth () 
 {
+	mac=$1
+	wlan=$2
+	rssi=$3
 	echo "kicking $mac with $rssi dBm (thr=$thr) at $wlan" | logger
 	echo "$datetime: kicking $mac with $rssi dBm (thr=$thr) at $wlan" >> $logfile
 	ubus call hostapd.$wlan del_client \
 	"{'addr':'$mac', 'reason':5, 'deauth':true, 'ban_time':3000}"
 # "ban_time" prohibits the client to reassociate for the given amount of milliseconds.
-
-
 }
 
 # wlanlist for multiple wlans (e.g., 5GHz/2.4GHz)

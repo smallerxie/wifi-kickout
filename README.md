@@ -13,6 +13,7 @@ Before using it, you are suggested to set the 4 parameters according to your own
  - in "**white**list" mode, the script kicks out **all** the clients **except** those in the whitelist.
 There are thus a **blacklist** and a **whitelist**, attention that the type is string other than array, a comma is used to seprate the different mac addresses.
 By default, the "**white**list" mode is selected, and with an empty whitelist, any associated client might be kicked out by the router if its signal is too weak (< **thr**).
+**hidden functions** there are commented-out codes in the sh file to offer additional functions, if you can not understand them, just leave those lines commented-out.
 
 # Installation
 First, copy the script file kickout.sh to your router (e.g., using scp), in my case the location is /usr/kickout.sh.
@@ -26,7 +27,7 @@ Otherwise, you may prefer a higher frequency to run the script by using the "sle
 The log file is located at `/tmp/wifi-kickout.log`. Some actions are also recorded in the system logger `/var/log/message`.
 
 # Future improvement
-Use a list-like structure to set different thresholds for different wlan devices in the router. Since ash does not support list, string manipulation seems necessary.
+Use a array-like structure to set different thresholds for different wlan devices in the router. Since ash does not support list, string manipulation seems necessary.
 
 # Issues
 Issues are always welcome, **English** is prefered, **Chinese/中文** or **French/Français** are also accepted.

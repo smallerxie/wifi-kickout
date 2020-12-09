@@ -27,10 +27,8 @@ fi
 # function deauth
 function deauth () 
 {
-	mac=$1
-	wlan=$2
-	echo "kicking $1 with $3 dBm (thr=$thr) at $2" | logger
-	echo "$datetime: kicking $1 with $3 dBm (thr=$thr) at $2" >> $logfile
+	echo "kicking $mac with $rssi dBm (thr=$thr) at $wlan" | logger
+	echo "$datetime: kicking $mac with $rssi dBm (thr=$thr) at $wlan" >> $logfile
 	ubus call hostapd.$wlan del_client \
 	"{'addr':'$mac', 'reason':5, 'deauth':true, 'ban_time':3000}"
 # "ban_time" prohibits the client to reassociate for the given amount of milliseconds.
@@ -61,8 +59,8 @@ do
 					then
 						##skip wlan if necessary
 						#if [ $wlan = wlan0 ];then
-						#	echo "ignored $1 with $3 dBm (thr=$thr) at $2" | logger
-						#	echo "$datetime: ignored $1 with $3 dBm (thr=$thr) at $2" >> $logfile
+						#	echo "ignored $mac with $rssi dBm (thr=$thr) at $wlan" | logger
+						#	echo "$datetime: ignored $1 with $rssi dBm (thr=$thr) at $wlan" >> $logfile
 						#	continue
 						#fi
 						##

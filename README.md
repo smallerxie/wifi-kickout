@@ -1,3 +1,5 @@
+中文教程请移步：<https://blog.xieyc.com/openwrt-wifi-kickout/>
+
 # Introduction to wifi-kickout
 The shell script for OpenWrt kicks out the wifi client whose signal is too weak signal by comparing it to a threshold.
 It can be periodically triggered by crontab or by a loop with a `sleep` command, thus improves roaming performance.
